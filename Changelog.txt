@@ -1,1 +1,6 @@
 #Changelog for MyNumber
+
+v1.0.0
+Initial release as a module
+
+
