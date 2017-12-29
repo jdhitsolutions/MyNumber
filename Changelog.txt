@@ -1,5 +1,9 @@
 #Changelog for MyNumber
 
+v1.1.0
+Added license
+updated manifest
+
 v1.0.0
 Initial release as a module
 
