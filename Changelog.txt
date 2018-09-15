@@ -1,5 +1,10 @@
 #Changelog for MyNumber
 
+v1.2.0
+Updated license
+Updated README
+minor updates to help
+
 v1.1.0
 Added license
 updated manifest
