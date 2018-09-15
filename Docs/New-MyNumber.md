@@ -8,21 +8,24 @@ schema: 2.0.0
 # New-MyNumber
 
 ## SYNOPSIS
+
 Create a MyNumber object
 
 ## SYNTAX
 
-```
+```yaml
 New-MyNumber [-Number] <Double[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 This command will create a MyNumber object based on the numeric value.
 
 ## EXAMPLES
 
 ### Example 1
-```
+
+```powershell
 PS C:\> New-MyNumber 123
 
 Number     : 123
@@ -41,8 +44,10 @@ Exp        : 2.61951731874906E+53
 Factorial  : 1.21463043670253E+205
 Factors    : {1, 3, 41, 123}
 ```
+
 ### Example 2
-```
+
+```powershell
 PS C:\> 1..10 | New-MyNumber | Where IsEven | Select Number,Square,Cube
 
 Number Square Cube
@@ -53,9 +58,11 @@ Number Square Cube
      8     64  512
     10    100 1000
 ```
+
 ## PARAMETERS
 
 ### -Number
+
 Enter a numeric value.
 
 ```yaml
@@ -71,6 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -84,4 +92,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
 [Set-MyNumber]()

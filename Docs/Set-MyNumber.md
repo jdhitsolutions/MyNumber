@@ -8,21 +8,24 @@ schema: 2.0.0
 # Set-MyNumber
 
 ## SYNOPSIS
-Modify a MyNumber object
+
+Modify a MyNumber object.
 
 ## SYNTAX
 
-```
+```yaml
 Set-MyNumber [-Number] <MyNumber> [-Value] <Double> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Use this command to update a MyNumber object with a new value.
 
 ## EXAMPLES
 
 ### Example 1
-```
+
+```powershell
 PS C:\> $x = New-Mynumber 52
 PS C:\> $x
 
@@ -63,10 +66,10 @@ Factorial  : 1.76295255109024E+180
 Factors    : {1, 3, 37, 111}
 ```
 
-
 ## PARAMETERS
 
 ### -Number
+
 A MyNumber object
 
 ```yaml
@@ -82,6 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 The new value for the Number value.
 
 ```yaml
@@ -97,6 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -110,4 +115,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
 [New-MyNumber]()

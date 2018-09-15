@@ -112,7 +112,7 @@ Function Convert-MyNumber {
     [CmdletBinding(defaultparametersetname = 'binary')]
     [OutputType([System.String])]
     Param(
-        [Parameter(Position = 0, ValueFromPipelineByPropertyName, ValueFromPipeline,Mandatory)]
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName, ValueFromPipeline, Mandatory)]
         [Double]$Number,
         [Parameter(ParameterSetName = "binary")]
         [Switch]$ToBinary,
@@ -157,4 +157,4 @@ Function Set-MyNumber {
     End {}
 }
 
-Export-ModuleMember -function New-MyNumber, Convert-MyNumber, Set-MyNumber
+# Export-ModuleMember -function New-MyNumber, Convert-MyNumber, Set-MyNumber

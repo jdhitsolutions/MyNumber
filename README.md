@@ -1,6 +1,6 @@
-# MyNumber #
+# MyNumber
 
-A demonstration class-based module that creates a number object.
+A demonstration class-based module that creates a number object. The class is defined in [MyNumber.psm1](mynumber.psm1)
 
 ```
 PS C:\> $x = new-mynumber 11
@@ -50,4 +50,4 @@ PS C:\> convert-mynumber 1024 -ToBinary
 ```
 You can only access the class definition through the functions.
 
-_Last updated 29 December, 2017_
+_Last updated 15 September, 2018_

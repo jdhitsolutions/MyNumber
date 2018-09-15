@@ -8,32 +8,38 @@ schema: 2.0.0
 # Convert-MyNumber
 
 ## SYNOPSIS
-Convert a numeric value
+
+Convert a numeric value.
 
 ## SYNTAX
 
 ### binary (Default)
-```
+
+```yaml
 Convert-MyNumber [-Number] <Double> [-ToBinary] [<CommonParameters>]
 ```
 
 ### hex
-```
+
+```yaml
 Convert-MyNumber [-Number] <Double> [-ToHex] [<CommonParameters>]
 ```
 
 ### octal
-```
+
+```yaml
 Convert-MyNumber [-Number] <Double> [-ToOctal] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Convert a numeric value to the specified format. The result will be a string.
 
 ## EXAMPLES
 
 ### Example 1
-```
+
+```powershell
 PS C:\> convert-mynumber 123
 1111011
 ```
@@ -41,21 +47,25 @@ PS C:\> convert-mynumber 123
 The default behavior is to convert to binary.
 
 ### Example 2
-```
+
+```powershell
 PS C:\> 1024678 | convert-mynumber -ToHex
 fa2a6
 ```
 
-### Example 2
-```
+### Example 3
+
+```powershell
 PS C:\> 1024678 | convert-mynumber -ToOctal
 3721246
 
 ```
+
 ## PARAMETERS
 
 ### -Number
-A numeric value
+
+A numeric value to be converted.
 
 ```yaml
 Type: Double
@@ -70,7 +80,8 @@ Accept wildcard characters: False
 ```
 
 ### -ToBinary
-Convert to a binary string
+
+Convert the number to a binary string
 
 ```yaml
 Type: SwitchParameter
@@ -85,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -ToHex
-Convert to a Hex string
+Convert the number to a hex string
 
 ```yaml
 Type: SwitchParameter
@@ -100,7 +111,8 @@ Accept wildcard characters: False
 ```
 
 ### -ToOctal
-Convert to an Octal string
+
+Convert the number to an Octal string
 
 ```yaml
 Type: SwitchParameter

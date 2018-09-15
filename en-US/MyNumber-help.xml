@@ -6,7 +6,7 @@
       <command:verb>Convert</command:verb>
       <command:noun>MyNumber</command:noun>
       <maml:description>
-        <maml:para>Convert a numeric value</maml:para>
+        <maml:para>Convert a numeric value.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
@@ -18,7 +18,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
           <maml:Description>
-            <maml:para>A numeric value</maml:para>
+            <maml:para>A numeric value to be converted.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
           <dev:type>
@@ -30,7 +30,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ToBinary</maml:name>
           <maml:Description>
-            <maml:para>Convert to a binary string</maml:para>
+            <maml:para>Convert the number to a binary string</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -44,7 +44,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
           <maml:Description>
-            <maml:para>A numeric value</maml:para>
+            <maml:para>A numeric value to be converted.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
           <dev:type>
@@ -56,7 +56,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ToHex</maml:name>
           <maml:Description>
-            <maml:para>Convert to a Hex string</maml:para>
+            <maml:para>Convert the number to a hex string</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -70,7 +70,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
           <maml:Description>
-            <maml:para>A numeric value</maml:para>
+            <maml:para>A numeric value to be converted.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
           <dev:type>
@@ -82,7 +82,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ToOctal</maml:name>
           <maml:Description>
-            <maml:para>Convert to an Octal string</maml:para>
+            <maml:para>Convert the number to an Octal string</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -96,7 +96,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
         <maml:name>Number</maml:name>
         <maml:Description>
-          <maml:para>A numeric value</maml:para>
+          <maml:para>A numeric value to be converted.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
         <dev:type>
@@ -108,7 +108,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ToBinary</maml:name>
         <maml:Description>
-          <maml:para>Convert to a binary string</maml:para>
+          <maml:para>Convert the number to a binary string</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -120,7 +120,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ToHex</maml:name>
         <maml:Description>
-          <maml:para>Convert to a Hex string</maml:para>
+          <maml:para>Convert the number to a hex string</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -132,7 +132,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ToOctal</maml:name>
         <maml:Description>
-          <maml:para>Convert to an Octal string</maml:para>
+          <maml:para>Convert the number to an Octal string</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -169,7 +169,7 @@
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>Example 1</maml:title>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
         <dev:code>PS C:\&gt; convert-mynumber 123
 1111011</dev:code>
         <dev:remarks>
@@ -177,7 +177,7 @@
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Example 2</maml:title>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
         <dev:code>PS C:\&gt; 1024678 | convert-mynumber -ToHex
 fa2a6</dev:code>
         <dev:remarks>
@@ -185,7 +185,7 @@ fa2a6</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Example 2</maml:title>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
         <dev:code>PS C:\&gt; 1024678 | convert-mynumber -ToOctal
 3721246</dev:code>
         <dev:remarks>
@@ -265,7 +265,7 @@ fa2a6</dev:code>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>Example 1</maml:title>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
         <dev:code>PS C:\&gt; New-MyNumber 123
 
 Number     : 123
@@ -288,7 +288,7 @@ Factors    : {1, 3, 41, 123}</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Example 2</maml:title>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
         <dev:code>PS C:\&gt; 1..10 | New-MyNumber | Where IsEven | Select Number,Square,Cube
 
 Number Square Cube
@@ -316,7 +316,7 @@ Number Square Cube
       <command:verb>Set</command:verb>
       <command:noun>MyNumber</command:noun>
       <maml:description>
-        <maml:para>Modify a MyNumber object</maml:para>
+        <maml:para>Modify a MyNumber object.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
@@ -404,7 +404,7 @@ Number Square Cube
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>Example 1</maml:title>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
         <dev:code>PS C:\&gt; $x = New-Mynumber 52
 PS C:\&gt; $x
 
