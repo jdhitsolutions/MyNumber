@@ -1,7 +1,7 @@
 ---
 external help file: MyNumber-help.xml
 Module Name: MyNumber
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -20,8 +20,7 @@ Convert-MyNumber [-Number] <Double> [-ToBinary] [<CommonParameters>]
 ```
 
 ### hex
-
-```yaml
+```
 Convert-MyNumber [-Number] <Double> [-ToHex] [<CommonParameters>]
 ```
 
@@ -58,7 +57,6 @@ fa2a6
 ```powershell
 PS C:\> 1024678 | convert-mynumber -ToOctal
 3721246
-
 ```
 
 ## PARAMETERS
@@ -70,7 +68,7 @@ A numeric value to be converted.
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -86,7 +84,7 @@ Convert the number to a binary string
 ```yaml
 Type: SwitchParameter
 Parameter Sets: binary
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -96,12 +94,13 @@ Accept wildcard characters: False
 ```
 
 ### -ToHex
+
 Convert the number to a hex string
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: hex
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +116,7 @@ Convert the number to an Octal string
 ```yaml
 Type: SwitchParameter
 Parameter Sets: octal
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -127,6 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -139,5 +139,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
+
 ## RELATED LINKS
 
+[New-MyNumber](New-MyNumber.md)
+
+[Set-MyNumber](Set-MyNumber.md)

@@ -1,7 +1,7 @@
 ---
 external help file: MyNumber-help.xml
 Module Name: MyNumber
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -9,12 +9,12 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
-Create a MyNumber object
+Create a MyNumber object.
 
 ## SYNTAX
 
 ```yaml
-New-MyNumber [-Number] <Double[]> [<CommonParameters>]
+New-MyNumber [-Number] <Double[]> [-CustomScriptBlock <ScriptBlock>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,7 +43,10 @@ IsPrime    : False
 Exp        : 2.61951731874906E+53
 Factorial  : 1.21463043670253E+205
 Factors    : {1, 3, 41, 123}
+Custom     : 0
 ```
+
+Note that the CircleArea value is calculated assuming that your number is the radius.
 
 ### Example 2
 
@@ -59,6 +62,32 @@ Number Square Cube
     10    100 1000
 ```
 
+### Example 3
+
+```powershell
+PS C:\> new-mynumber 77 -CustomScriptBlock {Param($x) [char][int]$x }
+
+
+Number     : 77
+Square     : 5929
+Cube       : 456533
+Sqrt       : 8.77496438739212
+Log        : 4.34380542185368
+Sine       : 0.999520158580731
+Cosine     : -0.0309750317312165
+Tangent    : -32.2685757759344
+CircleArea : 18626.5028431339
+Inverse    : 0.012987012987013
+IsEven     : False
+IsPrime    : False
+Exp        : 2.75851345452317E+33
+Factorial  : 1.45183092028286E+113
+Factors    : {1, 7, 11, 77}
+Custom     : M
+```
+
+Here is an example using a custom scriptblock. You should include a parameter in your scriptblock for the number value.
+
 ## PARAMETERS
 
 ### -Number
@@ -68,12 +97,28 @@ Enter a numeric value.
 ```yaml
 Type: Double[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -CustomScriptBlock
+
+You can specify a custom scriptblock that can be used to calculate a custom value. You should use a scriptblock with a parameter indicating the current number. When the scriptblock is executed the number value is passed as an argument. See examples.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -91,6 +136,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
+
 ## RELATED LINKS
 
-[Set-MyNumber]()
+[Set-MyNumber](Set-MyNumber.md)

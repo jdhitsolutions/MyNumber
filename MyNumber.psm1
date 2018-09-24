@@ -6,11 +6,6 @@
 
 Class MyNumber {
 
-    <#
-if ($Custom) {
-       $hash.Add("Custom",(Invoke-Command -ScriptBlock $custom -ArgumentList $N))
-    }
-#>
     [double]$Number
     [double]$Square
     [double]$Cube
@@ -26,6 +21,9 @@ if ($Custom) {
     [double]$Exp
     [double]$Factorial
     [double[]]$Factors
+    [psobject]$Custom
+    #store the custom scriptblock in a hidden property which can be managed through a module function
+    hidden [scriptblock]$CustomScriptBlock
 
     #methods
 
@@ -45,14 +43,20 @@ if ($Custom) {
         $this.Factors = (1..$($this.number) | where-object {-Not ($this.number % $_)})
         $this.IsEven = $this.TestIsEven()
         $this.IsPrime = $this.TestIsPrime()
+        if ($this.CustomScriptBlock) {
+            $customresult = Invoke-Command -ScriptBlock $this.CustomScriptBlock -ArgumentList $this.Number
+        }
+        else {
+            $customresult = 0
+        }
+        $this.Custom = $customresult
+     
         Return $this
-
     }
 
     [boolean]TestIsPrime() {
         if ($this.factors.count -eq 2) {
             return $True
-
         }
         else {
             return $False
@@ -84,10 +88,8 @@ if ($Custom) {
 
     #constructor
     MyNumber([double]$Number) {
-
         $this.Number = $Number
         $this.Refresh()
-
     }
 
 }
@@ -96,14 +98,22 @@ if ($Custom) {
 Function New-MyNumber {
     [CmdletBinding()]
     [OutputType([MyNumber])]
+
     Param(
         [Parameter(Position = 0, Mandatory, HelpMessage = "Enter a numeric value.", ValueFromPipeline)]    
-        [double[]]$Number
+        [double[]]$Number,
+        [scriptblock]$CustomScriptBlock
     )
     Process {
         Foreach ($n in $Number) {
             Write-Verbose "Creating a myNumber object for $n"
-            New-Object -TypeName MyNumber -ArgumentList $n
+            $obj = New-Object -TypeName MyNumber -ArgumentList $n
+
+            if ($CustomScriptBlock) {
+                $obj.CustomScriptBlock = $CustomScriptBlock
+                $obj.Refresh() | out-Null
+            }
+            $obj
         }
     }
 }   
@@ -111,6 +121,7 @@ Function New-MyNumber {
 Function Convert-MyNumber {
     [CmdletBinding(defaultparametersetname = 'binary')]
     [OutputType([System.String])]
+
     Param(
         [Parameter(Position = 0, ValueFromPipelineByPropertyName, ValueFromPipeline, Mandatory)]
         [Double]$Number,
@@ -141,20 +152,35 @@ Function Convert-MyNumber {
 }
 
 Function Set-MyNumber {
-    [cmdletbinding()]
+    [cmdletbinding(SupportsShouldProcess, DefaultParameterSetName = "value")]
     [OutputType([MyNumber])]
+
     Param(
         [Parameter(Position = 0, ValueFromPipeline, Mandatory)]
         [MyNumber]$Number,
-        [Parameter(Position = 1, Mandatory)]
-        [double]$Value
+        [Parameter(Position = 1, Mandatory, ParameterSetName = "Value")]
+        [double]$Value,
+        [Parameter(ParameterSetName = "script")]
+        [scriptblock]$CustomScriptBlock
     )
     Begin {}
     Process {
-        $number.number = $Value
-        $number.refresh()
+
+        switch ($pscmdlet.ParameterSetName) {
+            "value" {
+                if ($pscmdlet.ShouldProcess("MyNumber", "Set number to $value")) {
+                    $number.number = $Value
+                    $number.refresh()
+                }
+            } #value
+            "script" {
+                if ($pscmdlet.ShouldProcess("MyNumber", "Set custom script to $CustomScriptblock")) {
+                    $number.CustomScriptBlock = $CustomScriptBlock
+                    $number.refresh()
+                }
+            }
+        }
     }
     End {}
 }
 
-# Export-ModuleMember -function New-MyNumber, Convert-MyNumber, Set-MyNumber

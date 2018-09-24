@@ -1,5 +1,5 @@
 
-Import-Module ..\MyNumber.psd1 -force
+Import-Module $psscriptroot\..\MyNumber.psd1 -force
 
 Describe New-MyNumber {
     It "Should run without error" {

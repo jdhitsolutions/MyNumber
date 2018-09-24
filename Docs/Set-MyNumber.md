@@ -1,7 +1,7 @@
 ---
 external help file: MyNumber-help.xml
 Module Name: MyNumber
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -13,8 +13,19 @@ Modify a MyNumber object.
 
 ## SYNTAX
 
-```yaml
-Set-MyNumber [-Number] <MyNumber> [-Value] <Double> [<CommonParameters>]
+### value (Default)
+```
+Set-MyNumber [-Number] <MyNumber> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Value
+```
+Set-MyNumber [-Number] <MyNumber> [-Value] <Double> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### script
+```
+Set-MyNumber [-Number] <MyNumber> [-CustomScriptBlock <ScriptBlock>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,6 +56,7 @@ IsPrime    : False
 Exp        : 3.83100800071658E+22
 Factorial  : 8.06581751709439E+67
 Factors    : {1, 2, 4, 13...}
+Custom     : 0
 
 PS C:\> $x  | set-mynumber -value 111
 
@@ -64,18 +76,46 @@ IsPrime    : False
 Exp        : 1.60948706696152E+48
 Factorial  : 1.76295255109024E+180
 Factors    : {1, 3, 37, 111}
+Custom     : 0
 ```
+
+Assign a new value to the MyNumber object.
+
+### Example 2
+
+```powershell
+PS C:\> $x | Set-MyNumber -CustomScriptBlock {param($x) ($x/365)*100 -as [int]}
+
+Number     : 52
+Square     : 2704
+Cube       : 140608
+Sqrt       : 7.21110255092798
+Log        : 3.95124371858143
+Sine       : 0.986627592040485
+Cosine     : -0.162990780795705
+Tangent    : -6.05327238279284
+CircleArea : 8494.8665353068
+Inverse    : 0.0192307692307692
+IsEven     : True
+IsPrime    : False
+Exp        : 3.83100800071658E+22
+Factorial  : 8.06581751709439E+67
+Factors    : {1, 2, 4, 13...}
+Custom     : 14
+```
+
+Set a custom scriptblock. You should include a parameter in your scriptblock for the number value.
 
 ## PARAMETERS
 
 ### -Number
 
-A MyNumber object
+A MyNumber object.
 
 ```yaml
 Type: MyNumber
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -90,11 +130,59 @@ The new value for the Number value.
 
 ```yaml
 Type: Double
-Parameter Sets: (All)
-Aliases: 
+Parameter Sets: Value
+Aliases:
 
 Required: True
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomScriptBlock
+
+You can specify a custom scriptblock that can be used to calculate a custom value. You should use a scriptblock with a parameter indicating the current number. When the scriptblock is executed the number value is passed as an argument. See examples.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: script
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -114,6 +202,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
+
 ## RELATED LINKS
 
-[New-MyNumber]()
+[New-MyNumber](New-MyNumber.md)
+
+[Convert-MyNumber](Convert-MyNumber.md)
