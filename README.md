@@ -1,6 +1,16 @@
 # MyNumber
 
-A demonstration class-based module that creates a number object. The class is defined in [MyNumber.psm1](mynumber.psm1). Functionality is exposed through a set of functions.
+A demonstration class-based module that creates a number object. The module should work on Windows PowerShell and PowerShell Core cross-platform. It is intended for educational purposes.
+
+Install the latest version from the PowerShell Gallery.
+
+```powershell
+Install-Module MyNumber
+```
+
+In PowerShell Core you'll most likely need to include `-scope currentuser`.
+
+The class is defined in [MyNumber.psm1](mynumber.psm1). Functionality is exposed through a set of functions.
 
 + [New-MyNumber](./docs/New-MyNumber.md)
 + [Set-MyNumber](./docs/Set-MyNumber.md)
