@@ -20,7 +20,8 @@ Convert-MyNumber [-Number] <Double> [-ToBinary] [<CommonParameters>]
 ```
 
 ### hex
-```
+
+```yaml
 Convert-MyNumber [-Number] <Double> [-ToHex] [<CommonParameters>]
 ```
 

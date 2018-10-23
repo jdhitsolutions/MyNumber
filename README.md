@@ -1,6 +1,8 @@
 # MyNumber
 
-A demonstration class-based module that creates a number object. The module should work on Windows PowerShell and PowerShell Core cross-platform. It is intended for educational purposes.
+A demonstration class-based module that creates a *number* object. The functionality of the module isn't that practical. But it can serve as a model on how you might build a class-based PowerShell tool.
+
+The module should work on Windows PowerShell and PowerShell Core cross-platform. It is intended for educational purposes.
 
 Install the latest version from the PowerShell Gallery.
 
@@ -93,4 +95,4 @@ You should include a parameter in your scriptblock for the number value. It will
 
 You can only access the class definition through the functions.
 
-_Last updated 24 September, 2018_
+_Last updated 23 October 2018_

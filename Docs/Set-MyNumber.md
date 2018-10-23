@@ -14,17 +14,20 @@ Modify a MyNumber object.
 ## SYNTAX
 
 ### value (Default)
-```
+
+```yaml
 Set-MyNumber [-Number] <MyNumber> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Value
-```
+
+```yaml
 Set-MyNumber [-Number] <MyNumber> [-Value] <Double> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### script
-```
+
+```yaml
 Set-MyNumber [-Number] <MyNumber> [-CustomScriptBlock <ScriptBlock>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 

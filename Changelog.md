@@ -1,4 +1,10 @@
-# Changelog for MyNumber
+# Change Log for MyNumber
+
+## v1.3.1
+
++ file cleanup for the PowerShell Gallery
++ Updated `README.md`
++ Updated manifest
 
 ## v1.3.0
 
