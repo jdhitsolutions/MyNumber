@@ -1,16 +1,16 @@
 
-Import-Module $psscriptroot\..\MyNumber.psd1 -force
+Import-Module $PSScriptRoot\..\MyNumber.psd1 -Force
 
 Describe New-MyNumber {
-    It "Should run without error" {
-        {New-MyNumber 1} | Should not Throw
+    It 'Should run without error' {
+        { New-MyNumber 1 } | Should -Not Throw
     }
-    It "Should create a MyNumber object type" {
+    It 'Should create a MyNumber object type' {
         $n = New-MyNumber 1
-        $n.gettype().Name | Should be "MyNumber"
+        $n.GetType().Name | Should -Be 'MyNumber'
     }
-    
-    $prophash = @{
+
+    $PropHash = @{
         Log        = [double]
         Number     = [double]
         Sqrt       = [double]
@@ -27,20 +27,20 @@ Describe New-MyNumber {
         Factors    = [double[]]
         Cube       = [double]
     }
-    $prophash.GetEnumerator() | foreach-object -begin {$n = New-MyNumber 2} -process {
+    $PropHash.GetEnumerator() | ForEach-Object -Begin { $n = New-MyNumber 2 } -Process {
         It "Should have a property called $($_.key) of type $($_.value)" {
-            $n.$($_.key) -is $_.value | Should Be $True
+            $n.$($_.key) -is $_.value | Should -Be $True
         }
     }
-    It "Should create a new object with pipeline input" {
-        (1..5 | New-MyNumber).count | Should be 5
+    It 'Should create a new object with pipeline input' {
+        (1..5 | New-MyNumber).count | Should -Be 5
     }
 
-    It "Should determine prime numbers" {
-        (2, 3, 5, 67, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71 |New-MyNumber | where-object IsPrime).Count | Should be 20
+    It 'Should determine prime numbers' {
+        (2, 3, 5, 67, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71 | New-MyNumber | Where-Object IsPrime).Count | Should -be 20
     }
 
-    It "Should determine even numbers" {
-        (1..10 | New-MyNumber | where-object IsEven).count | Should Be 5
+    It 'Should determine even numbers' {
+        (1..10 | New-MyNumber | Where-Object IsEven).count | Should -Be 5
     }
 }
