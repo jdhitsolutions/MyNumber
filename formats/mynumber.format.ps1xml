@@ -1,0 +1,91 @@
+<!--
+Format type data generated 12/29/2023 13:19:52 by PROSPERO\Jeff
+
+This file was created using the New-PSFormatXML command that is part
+of the PSScriptTools module.
+
+https://github.com/jdhitsolutions/PSScriptTools
+-->
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <!--Created 12/29/2023 13:19:52 by PROSPERO\Jeff-->
+      <Name>default</Name>
+      <ViewSelectedBy>
+        <TypeName>MyNumber</TypeName>
+      </ViewSelectedBy>
+      <GroupBy>
+        <!--
+            You can also use a scriptblock to define a custom property name.
+            You must have a Label tag.
+            <ScriptBlock>$_.machinename.ToUpper()</ScriptBlock>
+            <Label>Computername</Label>
+
+            Use <Label> to set the displayed value.
+-->
+        <PropertyName>Number</PropertyName>
+        <Label>Number</Label>
+      </GroupBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <!--
+            By default the entries use property names, but you can replace them with scriptblocks.
+            <ScriptBlock>$_.foo /1mb -as [int]</ScriptBlock>
+-->
+              <ListItem>
+                <Label>Square</Label>
+                <PropertyName>Square</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Cube</Label>
+                <PropertyName>Cube</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Sqrt</Label>
+                <PropertyName>Sqrt</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Log</Label>
+                <PropertyName>Log</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Sine</Label>
+                <PropertyName>Sine</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Cosine</Label>
+                <PropertyName>Cosine</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Tangent</Label>
+                <PropertyName>Tangent</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>CircleArea</Label>
+                <PropertyName>CircleArea</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Inverse</Label>
+                <PropertyName>Inverse</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Exp</Label>
+                <PropertyName>Exp</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Factorial</Label>
+                <PropertyName>Factorial</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Factors</Label>
+                <PropertyName>Factors</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>

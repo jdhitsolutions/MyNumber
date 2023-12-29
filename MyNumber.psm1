@@ -1,11 +1,8 @@
-#requires -version 5.0
-
 #region Main
 
 #define class
-
 Class MyNumber {
-
+    #properties
     [double]$Number
     [double]$Square
     [double]$Cube
@@ -21,14 +18,12 @@ Class MyNumber {
     [double]$Exp
     [double]$Factorial
     [double[]]$Factors
-    [psobject]$Custom
+    [PSObject]$Custom
     #store the custom scriptblock in a hidden property which can be managed through a module function
     hidden [scriptblock]$CustomScriptBlock
 
     #methods
-
-    [mynumber] Refresh() {
-
+    [MyNumber] Refresh() {
         $this.Square = ($this.number * $this.number)
         $this.Cube = [math]::Pow($this.number, 3)
         $this.Sqrt = [math]::Sqrt($this.number)
@@ -39,18 +34,18 @@ Class MyNumber {
         $this.CircleArea = [math]::PI * ($this.number * $this.number)
         $this.Inverse = 1 / $this.number
         $this.Exp = [math]::Exp($this.number)
-        $this.Factorial = (1..$this.number | foreach-object -begin {$r = 1} -process {$r *= $_} -end {$r})
-        $this.Factors = (1..$($this.number) | where-object {-Not ($this.number % $_)})
+        $this.Factorial = (1..$this.number | ForEach-Object -Begin { $r = 1 } -Process { $r *= $_ } -End { $r })
+        $this.Factors = (1..$($this.number) | Where-Object { -Not ($this.number % $_) })
         $this.IsEven = $this.TestIsEven()
         $this.IsPrime = $this.TestIsPrime()
         if ($this.CustomScriptBlock) {
-            $customresult = Invoke-Command -ScriptBlock $this.CustomScriptBlock -ArgumentList $this.Number
+            $CustomResult = Invoke-Command -ScriptBlock $this.CustomScriptBlock -ArgumentList $this.Number
         }
         else {
-            $customresult = 0
+            $CustomResult = 0
         }
-        $this.Custom = $customresult
-     
+        $this.Custom = $CustomResult
+        #class methods require the Return keyword
         Return $this
     }
 
@@ -71,17 +66,17 @@ Class MyNumber {
             Return $False
         }
     }
-    [string]ToBinary() {
+    [String]ToBinary() {
         $r = [convert]::ToString($this.Number, 2)
         Return $r
     }
 
-    [string]ToOctal() {
+    [String]ToOctal() {
         $r = [convert]::ToString($this.Number, 8)
         Return $r
     }
 
-    [string]ToHex() {
+    [String]ToHex() {
         $r = [convert]::ToString($this.Number, 16)
         Return $r
     }
@@ -93,94 +88,14 @@ Class MyNumber {
     }
 
 }
+
+#extend the class with custom type extensions
+
+Update-TypeData -TypeName MyNumber -MemberType ScriptProperty -MemberName Computername -Value {[System.Environment]::MachineName} -Force
+
+Update-TypeData -TypeName MyNumber -MemberType AliasProperty -MemberName Value -Value Number -Force
+
 #endregion
 
-Function New-MyNumber {
-    [CmdletBinding()]
-    [OutputType([MyNumber])]
-
-    Param(
-        [Parameter(Position = 0, Mandatory, HelpMessage = "Enter a numeric value.", ValueFromPipeline)]    
-        [double[]]$Number,
-        [scriptblock]$CustomScriptBlock
-    )
-    Process {
-        Foreach ($n in $Number) {
-            Write-Verbose "Creating a myNumber object for $n"
-            $obj = New-Object -TypeName MyNumber -ArgumentList $n
-
-            if ($CustomScriptBlock) {
-                $obj.CustomScriptBlock = $CustomScriptBlock
-                $obj.Refresh() | out-Null
-            }
-            $obj
-        }
-    }
-}   
-
-Function Convert-MyNumber {
-    [CmdletBinding(defaultparametersetname = 'binary')]
-    [OutputType([System.String])]
-
-    Param(
-        [Parameter(Position = 0, ValueFromPipelineByPropertyName, ValueFromPipeline, Mandatory)]
-        [Double]$Number,
-        [Parameter(ParameterSetName = "binary")]
-        [Switch]$ToBinary,
-        [Parameter(ParameterSetName = "hex")]
-        [Switch]$ToHex,
-        [Parameter(ParameterSetName = "octal")]
-        [Switch]$ToOctal
-    )
-
-    Begin { }
-    Process {
-        Write-Verbose "Processing $number"
-        Switch ($PSCmdlet.ParameterSetName) {
-            "binary" {
-                [convert]::ToString($Number, 2)
-            }
-            "hex" {
-                [convert]::ToString($Number, 16)
-            }
-            "octal" {
-                [convert]::ToString($Number, 8)
-            }
-        }
-    }
-    End {}
-}
-
-Function Set-MyNumber {
-    [cmdletbinding(SupportsShouldProcess, DefaultParameterSetName = "value")]
-    [OutputType([MyNumber])]
-
-    Param(
-        [Parameter(Position = 0, ValueFromPipeline, Mandatory)]
-        [MyNumber]$Number,
-        [Parameter(Position = 1, Mandatory, ParameterSetName = "Value")]
-        [double]$Value,
-        [Parameter(ParameterSetName = "script")]
-        [scriptblock]$CustomScriptBlock
-    )
-    Begin {}
-    Process {
-
-        switch ($pscmdlet.ParameterSetName) {
-            "value" {
-                if ($pscmdlet.ShouldProcess("MyNumber", "Set number to $value")) {
-                    $number.number = $Value
-                    $number.refresh()
-                }
-            } #value
-            "script" {
-                if ($pscmdlet.ShouldProcess("MyNumber", "Set custom script to $CustomScriptblock")) {
-                    $number.CustomScriptBlock = $CustomScriptBlock
-                    $number.refresh()
-                }
-            }
-        }
-    }
-    End {}
-}
-
+#dot source module functions
+Get-ChildItem -Path $PSScriptRoot\functions\*.ps1 | ForEach-Object -Process { . $_.FullName }

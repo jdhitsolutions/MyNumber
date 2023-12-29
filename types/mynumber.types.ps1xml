@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file was created with New-PSPropertySet from the
+PSTypeExtensionTools module which you can install from
+the PowerShell Gallery.
+
+Use Update-TypeData to append this file in your PowerShell session.
+
+Created 12/29/2023 13:23:37
+-->
+<Types>
+  <Type>
+    <Name>MyNumber</Name>
+    <Members>
+      <PropertySet>
+        <Name>trig</Name>
+        <ReferencedProperties>
+          <Name>Value</Name>
+          <Name>Sine</Name>
+          <Name>Cosine</Name>
+          <Name>Tangent</Name>
+        </ReferencedProperties>
+      </PropertySet>
+    </Members>
+  </Type>
+</Types>

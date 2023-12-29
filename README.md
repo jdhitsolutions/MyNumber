@@ -1,8 +1,8 @@
 # MyNumber
 
-A demonstration class-based module that creates a *number* object. The functionality of the module isn't that practical. But it can serve as a model on how you might build a class-based PowerShell tool.
+:mortar_board: A demonstration class-based module that creates a *number* object. The functionality of the module isn't that practical. But it can serve as a model of how you might build a class-based PowerShell tool.
 
-The module should work on Windows PowerShell and PowerShell Core cross-platform. It is intended for educational purposes.
+The module should work on Windows PowerShell and PowerShell 7, including cross-platform. It is intended for educational purposes.
 
 Install the latest version from the PowerShell Gallery.
 
@@ -10,16 +10,23 @@ Install the latest version from the PowerShell Gallery.
 Install-Module MyNumber
 ```
 
-In PowerShell Core you'll most likely need to include `-scope currentuser`.
+You can also use the `Microsoft.PowerShell.PSResourceGet` module.
+
+```powershell
+Install-PSResource MyNumber -scope AllUsers
+```
 
 The class is defined in [MyNumber.psm1](mynumber.psm1). Functionality is exposed through a set of functions.
 
-+ [New-MyNumber](./docs/New-MyNumber.md)
-+ [Set-MyNumber](./docs/Set-MyNumber.md)
-+ [Convert-MyNumber](./docs/Convert-MyNumber.md)
++ [New-MyNumber](/docs/New-MyNumber.md)
++ [Set-MyNumber](/docs/Set-MyNumber.md)
++ [Convert-MyNumber](/docs/Convert-MyNumber.md)
+
+The module also includes custom format and type extensions. The examples shown below may not reflect these changes.
+
 
 ```powershell
-PS C:\> $x = new-mynumber 11
+PS C:\> $x = New-MyNumber 11
 PS C:\> $x
 
 
@@ -40,7 +47,7 @@ Factorial  : 39916800
 Factors    : {1, 11}
 Custom     : 0
 
-PS C:\> $x | Set-mynumber -value 123
+PS C:\> $x | Set-MyNumber -value 123
 
 
 Number     : 123
@@ -60,17 +67,17 @@ Factorial  : 1.21463043670253E+205
 Factors    : {1, 3, 41, 123}
 Custom     : 0
 
-PS C:\> $x | convert-mynumber -tohex
+PS C:\> $x | Convert-MyNumber -ToHex
 7b
 
-PS C:\> convert-mynumber 1024 -ToBinary
+PS C:\> Convert-MyNumber 1024 -ToBinary
 10000000000
 ```
 
-You can also create a number with a custom scriptblock.
+You can also create a number with a custom script block.
 
 ```powershell
-PS C:\> new-mynumber 77 -CustomScriptBlock {Param($x) [char][int]$x }
+PS C:\> New-MyNumber 77 -CustomScriptBlock {Param($x) [char][int]$x }
 
 
 Number     : 77
@@ -91,8 +98,6 @@ Factors    : {1, 7, 11, 77}
 Custom     : M
 ```
 
-You should include a parameter in your scriptblock for the number value. It will be passed as an argument when calculating the value.
+You should include a parameter in your script block for the number value. It will be passed as an argument when calculating the value.
 
 You can only access the class definition through the functions.
-
-_Last updated 23 October 2018_

@@ -40,7 +40,7 @@ Use this command to update a MyNumber object with a new value.
 ### Example 1
 
 ```powershell
-PS C:\> $x = New-Mynumber 52
+PS C:\> $x = New-MyNumber 52
 PS C:\> $x
 
 
@@ -61,7 +61,7 @@ Factorial  : 8.06581751709439E+67
 Factors    : {1, 2, 4, 13...}
 Custom     : 0
 
-PS C:\> $x  | set-mynumber -value 111
+PS C:\> $x  | Set-MyNumber -value 111
 
 
 Number     : 111
@@ -107,7 +107,7 @@ Factors    : {1, 2, 4, 13...}
 Custom     : 14
 ```
 
-Set a custom scriptblock. You should include a parameter in your scriptblock for the number value.
+Set a custom scrip block. You should include a parameter in your script lock for the number value.
 
 ## PARAMETERS
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ### -CustomScriptBlock
 
-You can specify a custom scriptblock that can be used to calculate a custom value. You should use a scriptblock with a parameter indicating the current number. When the scriptblock is executed the number value is passed as an argument. See examples.
+You can specify a custom script block that can be used to calculate a custom value. You should use a script block with a parameter indicating the current number. When the script block is executed the number value is passed as an argument. See examples.
 
 ```yaml
 Type: ScriptBlock

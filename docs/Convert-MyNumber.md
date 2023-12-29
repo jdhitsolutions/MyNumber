@@ -40,7 +40,7 @@ Convert a numeric value to the specified format. The result will be a string.
 ### Example 1
 
 ```powershell
-PS C:\> convert-mynumber 123
+PS C:\> Convert-MyNumber 123
 1111011
 ```
 
@@ -49,14 +49,14 @@ The default behavior is to convert to binary.
 ### Example 2
 
 ```powershell
-PS C:\> 1024678 | convert-mynumber -ToHex
+PS C:\> 1024678 | Convert-MyNumber -ToHex
 fa2a6
 ```
 
 ### Example 3
 
 ```powershell
-PS C:\> 1024678 | convert-mynumber -ToOctal
+PS C:\> 1024678 | Convert-MyNumber -ToOctal
 3721246
 ```
 

@@ -65,7 +65,7 @@ Number Square Cube
 ### Example 3
 
 ```powershell
-PS C:\> new-mynumber 77 -CustomScriptBlock {Param($x) [char][int]$x }
+PS C:\> New-MyNumber 77 -CustomScriptBlock {Param($x) [char][int]$x }
 
 
 Number     : 77
@@ -86,7 +86,7 @@ Factors    : {1, 7, 11, 77}
 Custom     : M
 ```
 
-Here is an example using a custom scriptblock. You should include a parameter in your scriptblock for the number value.
+Here is an example using a custom script block. You should include a parameter in your script block for the number value.
 
 ## PARAMETERS
 
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 
 ### -CustomScriptBlock
 
-You can specify a custom scriptblock that can be used to calculate a custom value. You should use a scriptblock with a parameter indicating the current number. When the scriptblock is executed the number value is passed as an argument. See examples.
+You can specify a custom script block that can be used to calculate a custom value. You should use a script block with a parameter indicating the current number. When the scrip tblock is executed the number value is passed as an argument. See examples.
 
 ```yaml
 Type: ScriptBlock

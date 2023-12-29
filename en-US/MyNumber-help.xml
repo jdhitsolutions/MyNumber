@@ -17,9 +17,9 @@
         <maml:name>Convert-MyNumber</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>A numeric value to be converted.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
           <dev:type>
             <maml:name>Double</maml:name>
@@ -29,9 +29,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ToBinary</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Convert the number to a binary string</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -43,9 +43,9 @@
         <maml:name>Convert-MyNumber</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>A numeric value to be converted.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
           <dev:type>
             <maml:name>Double</maml:name>
@@ -55,9 +55,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ToHex</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Convert the number to a hex string</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -69,9 +69,9 @@
         <maml:name>Convert-MyNumber</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>A numeric value to be converted.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
           <dev:type>
             <maml:name>Double</maml:name>
@@ -81,9 +81,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ToOctal</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Convert the number to an Octal string</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -95,9 +95,9 @@
     <command:parameters>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
         <maml:name>Number</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>A numeric value to be converted.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
         <dev:type>
           <maml:name>Double</maml:name>
@@ -107,9 +107,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ToBinary</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Convert the number to a binary string</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -119,9 +119,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ToHex</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Convert the number to a hex string</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -131,9 +131,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ToOctal</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Convert the number to an Octal string</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -170,7 +170,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; convert-mynumber 123
+        <dev:code>PS C:\&gt; Convert-MyNumber 123
 1111011</dev:code>
         <dev:remarks>
           <maml:para>The default behavior is to convert to binary.</maml:para>
@@ -178,7 +178,7 @@
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; 1024678 | convert-mynumber -ToHex
+        <dev:code>PS C:\&gt; 1024678 | Convert-MyNumber -ToHex
 fa2a6</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
@@ -186,7 +186,7 @@ fa2a6</dev:code>
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 3 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; 1024678 | convert-mynumber -ToOctal
+        <dev:code>PS C:\&gt; 1024678 | Convert-MyNumber -ToOctal
 3721246</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
@@ -221,9 +221,9 @@ fa2a6</dev:code>
         <maml:name>New-MyNumber</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Enter a numeric value.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Double[]</command:parameterValue>
           <dev:type>
             <maml:name>Double[]</maml:name>
@@ -233,9 +233,9 @@ fa2a6</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>CustomScriptBlock</maml:name>
-          <maml:Description>
-            <maml:para>You can specify a custom scriptblock that can be used to calculate a custom value. You should use a scriptblock with a parameter indicating the current number. When the scriptblock is executed the number value is passed as an argument. See examples.</maml:para>
-          </maml:Description>
+          <maml:description>
+            <maml:para>You can specify a custom script block that can be used to calculate a custom value. You should use a script block with a parameter indicating the current number. When the scrip tblock is executed the number value is passed as an argument. See examples.</maml:para>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
           <dev:type>
             <maml:name>ScriptBlock</maml:name>
@@ -248,9 +248,9 @@ fa2a6</dev:code>
     <command:parameters>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>Number</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Enter a numeric value.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Double[]</command:parameterValue>
         <dev:type>
           <maml:name>Double[]</maml:name>
@@ -260,9 +260,9 @@ fa2a6</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>CustomScriptBlock</maml:name>
-        <maml:Description>
-          <maml:para>You can specify a custom scriptblock that can be used to calculate a custom value. You should use a scriptblock with a parameter indicating the current number. When the scriptblock is executed the number value is passed as an argument. See examples.</maml:para>
-        </maml:Description>
+        <maml:description>
+          <maml:para>You can specify a custom script block that can be used to calculate a custom value. You should use a script block with a parameter indicating the current number. When the scrip tblock is executed the number value is passed as an argument. See examples.</maml:para>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
         <dev:type>
           <maml:name>ScriptBlock</maml:name>
@@ -338,7 +338,7 @@ Number Square Cube
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 3 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; new-mynumber 77 -CustomScriptBlock {Param($x) [char][int]$x }
+        <dev:code>PS C:\&gt; New-MyNumber 77 -CustomScriptBlock {Param($x) [char][int]$x }
 
 
 Number     : 77
@@ -358,7 +358,7 @@ Factorial  : 1.45183092028286E+113
 Factors    : {1, 7, 11, 77}
 Custom     : M</dev:code>
         <dev:remarks>
-          <maml:para>Here is an example using a custom scriptblock. You should include a parameter in your scriptblock for the number value.</maml:para>
+          <maml:para>Here is an example using a custom script block. You should include a parameter in your script block for the number value.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -386,9 +386,9 @@ Custom     : M</dev:code>
         <maml:name>Set-MyNumber</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>A MyNumber object.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">MyNumber</command:parameterValue>
           <dev:type>
             <maml:name>MyNumber</maml:name>
@@ -398,9 +398,9 @@ Custom     : M</dev:code>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Value</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The new value for the Number value.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
           <dev:type>
             <maml:name>Double</maml:name>
@@ -410,9 +410,9 @@ Custom     : M</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -421,9 +421,9 @@ Custom     : M</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -435,9 +435,9 @@ Custom     : M</dev:code>
         <maml:name>Set-MyNumber</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>Number</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>A MyNumber object.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">MyNumber</command:parameterValue>
           <dev:type>
             <maml:name>MyNumber</maml:name>
@@ -447,9 +447,9 @@ Custom     : M</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -458,9 +458,9 @@ Custom     : M</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -469,9 +469,9 @@ Custom     : M</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>CustomScriptBlock</maml:name>
-          <maml:Description>
-            <maml:para>You can specify a custom scriptblock that can be used to calculate a custom value. You should use a scriptblock with a parameter indicating the current number. When the scriptblock is executed the number value is passed as an argument. See examples.</maml:para>
-          </maml:Description>
+          <maml:description>
+            <maml:para>You can specify a custom script block that can be used to calculate a custom value. You should use a script block with a parameter indicating the current number. When the script block is executed the number value is passed as an argument. See examples.</maml:para>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
           <dev:type>
             <maml:name>ScriptBlock</maml:name>
@@ -484,9 +484,9 @@ Custom     : M</dev:code>
     <command:parameters>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>Number</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>A MyNumber object.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">MyNumber</command:parameterValue>
         <dev:type>
           <maml:name>MyNumber</maml:name>
@@ -496,9 +496,9 @@ Custom     : M</dev:code>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Value</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The new value for the Number value.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Double</command:parameterValue>
         <dev:type>
           <maml:name>Double</maml:name>
@@ -508,9 +508,9 @@ Custom     : M</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -520,9 +520,9 @@ Custom     : M</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
         <maml:name>WhatIf</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -532,9 +532,9 @@ Custom     : M</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>CustomScriptBlock</maml:name>
-        <maml:Description>
-          <maml:para>You can specify a custom scriptblock that can be used to calculate a custom value. You should use a scriptblock with a parameter indicating the current number. When the scriptblock is executed the number value is passed as an argument. See examples.</maml:para>
-        </maml:Description>
+        <maml:description>
+          <maml:para>You can specify a custom script block that can be used to calculate a custom value. You should use a script block with a parameter indicating the current number. When the script block is executed the number value is passed as an argument. See examples.</maml:para>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
         <dev:type>
           <maml:name>ScriptBlock</maml:name>
@@ -571,7 +571,7 @@ Custom     : M</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; $x = New-Mynumber 52
+        <dev:code>PS C:\&gt; $x = New-MyNumber 52
 PS C:\&gt; $x
 
 
@@ -592,7 +592,7 @@ Factorial  : 8.06581751709439E+67
 Factors    : {1, 2, 4, 13...}
 Custom     : 0
 
-PS C:\&gt; $x  | set-mynumber -value 111
+PS C:\&gt; $x  | Set-MyNumber -value 111
 
 
 Number     : 111
@@ -636,7 +636,7 @@ Factorial  : 8.06581751709439E+67
 Factors    : {1, 2, 4, 13...}
 Custom     : 14</dev:code>
         <dev:remarks>
-          <maml:para>Set a custom scriptblock. You should include a parameter in your scriptblock for the number value.</maml:para>
+          <maml:para>Set a custom scrip block. You should include a parameter in your script lock for the number value.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
