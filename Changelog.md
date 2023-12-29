@@ -1,5 +1,25 @@
 # Change Log for MyNumber
 
+## v1.4.1
+
+### Changed
+
+- Added missing online help links
+
+## v1.4.0
+
+### Changed
+
+- Updated Pester tests to support Pester 5
+- Module manifest clean up
+- Reorganized the module folder structure
+- Help updates
+
+### Added
+
+- Added custom format file
+- Added custom type extensions
+
 ## v1.3.1
 
 - file cleanup for the PowerShell Gallery

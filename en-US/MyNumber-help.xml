@@ -195,6 +195,10 @@ fa2a6</dev:code>
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://bit.ly/3tBattC</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
         <maml:linkText>New-MyNumber</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
@@ -363,6 +367,10 @@ Custom     : M</dev:code>
       </command:example>
     </command:examples>
     <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://bit.ly/3vbXgb0</maml:uri>
+      </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-MyNumber</maml:linkText>
         <maml:uri></maml:uri>
@@ -641,6 +649,10 @@ Custom     : 14</dev:code>
       </command:example>
     </command:examples>
     <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://bit.ly/3tFQx8Q</maml:uri>
+      </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-MyNumber</maml:linkText>
         <maml:uri></maml:uri>

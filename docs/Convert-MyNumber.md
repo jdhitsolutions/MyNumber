@@ -1,7 +1,7 @@
 ---
 external help file: MyNumber-help.xml
 Module Name: MyNumber
-online version:
+online version: https://bit.ly/3tBattC
 schema: 2.0.0
 ---
 
